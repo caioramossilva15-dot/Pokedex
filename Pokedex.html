@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header>
+        <nav class="navbar">
+            <div class="nav_logo">
+                <img class="logo_icone" src="resources/img/poke_logo.png" alt="Ícone Pokébola">
+                <img class="logo_texto" src="resources/img/Logo.png" alt="Logo Pokedesk">
+            </div>
+
+            <ul class="nav_menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="treinador.html">Perfil</a></li>
+            </ul>
+
+            <button class="btn-tema" onclick="mudarTema()">Mudar Tema</button>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL OS CARDS DE POKÉMON -->
+    <main class="container">
+        <h2>LISTA DE POKÉMONS</h2>
+        <section class="pokemon-tools" aria-label="Pesquisa e filtros de Pokémon">
+            <div class="pesquisa-pokemon">
+                <label for="pesquisa-pokemon">Pesquisar por nome</label>
+                <div class="pesquisa-linha">
+                    <input id="pesquisa-pokemon" type="search" placeholder="Ex.: Pikachu, Bulbasaur..." autocomplete="off">
+                    <button id="limpar-pesquisa" type="button">Limpar</button>
+                </div>
+                <div class="pesquisas-recentes" id="pesquisas-recentes" aria-live="polite"></div>
+            </div>
+            <fieldset class="filtros-tipo">
+                <legend>Filtrar por tipo (selecione mais de um)</legend>
+                <div class="tipos-opcoes" id="tipos-opcoes"></div>
+                <button id="limpar-filtros" type="button">Limpar tipos</button>
+            </fieldset>
+            <p class="resultado-filtro" id="resultado-filtro" aria-live="polite"></p>
+        </section>
+
+        <section class="paginacao-pokemon" aria-label="Paginação da Pokédex">
+            <label for="cards-por-pagina">Cards por página:</label>
+            <select id="cards-por-pagina">
+                <option value="50" selected>50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+            </select>
+            <button id="pagina-anterior" type="button" disabled>Anterior</button>
+            <span id="pagina-info" aria-live="polite">Página 1</span>
+            <button id="proxima-pagina" type="button" disabled>Próximos Pokémon</button>
+        </section>
+
+        <div class="pokemon" id="lista-pokemon"></div>
+        </div>
+    </main>
+
+    <!--FOOTER -->
+    <footer class="footer">
+        <div class="footer-informacao">
+            <img class="logo_texto" src="resources/img/Logo.png" alt="Logo Pokedesk">
+            <p>Sua biblioteca digital completa sobre o incrível mundo Pokémon.</p>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-coluna">
+                <h4>NAVEGAÇÃO</h4>
+                <ul>
+                    <li>Início</li>
+                    <li>Pokémons</li>
+                    <li>Favoritos</li>
+                    <li>Sobre</li>
+                </ul>
+            </div>
+            <div class="footer-coluna">
+                <h4>RECURSOS</h4>
+                <ul>
+                    <li>Lista completa</li>
+                    <li>Tipos</li>
+                    <li>Gerações</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <div class="footer-icons">
+                <img src="resources/img/poke_logo.png" alt="Ícone">
+            </div>
+        </div>
+
+        <div class="footer-copy"> &copy; 2026 Pokédex. Projeto acadêmico feito por Caio Cesar, Zihara Cyceli e Pedro Henrique. </div>
+    </footer>
+
+    <!-- JS PARA MUDAR O TEMA DO SITE -->
+    <script>
+        function mudarTema() {
+            document.body.classList.toggle('light-theme');
+        }
+    </script>
+    <script src="resources/js/Trainer.js"></script>
+    <script src="resources/js/script.js"></script>
+    <script src="resources/js/pesquisa-filtros.js"></script>
+</body>
+</html>

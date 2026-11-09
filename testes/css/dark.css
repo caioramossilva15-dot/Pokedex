@@ -1,0 +1,111 @@
+html, body {
+    background-color: rgb(178, 149, 17);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+* {
+font-family: "Montserrat", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+button {
+    width: 350px;
+    height: 120px;
+    border: 4px solid rgb(222, 222, 222);
+    border-radius: 60px;
+    background-color: rgb(222, 222, 222);
+    color: rgb(85, 85, 85);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 0%;
+    transition: all .3s linear;
+}
+
+.button-bg-animation{
+    animation: changeBgTheme .2s linear alternate forwards;
+}
+
+@keyframes changeBgTheme {
+    from {
+        background-color: rgb(222, 222, 222);
+        border: 4px solid rgb(222, 222, 222);
+        color: rgb(85, 85, 85);
+    }
+    to {
+        background-color: rgb(0, 5, 31);
+        border: 4px solid rgb(0, 5, 31);
+        color: rgb(250, 250, 250);
+    }
+}
+
+.theme-dark {
+    width: calc(100% - 120px);
+    justify-content: center;
+    display: none;
+}
+
+.button-light-animation {
+    animation: changeDarkDisplay .2s linear alternate forwards;
+}
+
+.theme-icon {
+    position: relative;
+    width: 120px;
+    height: 100%;
+    border-radius: 60px;
+    background-color: white;
+    z-index: 1;
+}
+
+@keyframes changeIconPosition {
+    from {
+        left: 0;
+    }
+    to {
+        left: calc(100% - 118px);
+    }
+}
+
+.button-icon-animation {
+    animation: changeIconPosition .2s linear alternate forwards;
+}
+
+.theme-light {
+    justify-content: center;
+    display: flex;
+    width: calc(100% - 120px);
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+@keyframes changeLightDisplay {
+    from {
+        opacity: 0;
+        display: flex;
+    }
+    to {
+        opacity: 1;
+        display: none;
+    }
+}
+
+.button-light-animation {
+    animation: changeLightDisplay .2s linear alternate forwards;
+}
+
+.active {
+    display: flex;
+}
+
+.inactive {
+    display: none;
+}
